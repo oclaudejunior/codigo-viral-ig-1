@@ -1,0 +1,9 @@
+# ARQUIVO CNAME (Para domínio personalizado)
+#
+# Se você comprar um domínio personalizado (ex: www.codigoviralig.com.br),
+# renomeie este arquivo para "CNAME" (sem extensão) e coloque seu domínio dentro.
+#
+# Exemplo:
+# codigoviralig.com.br
+#
+# Depois faça commit e push. O GitHub Pages vai usar automaticamente.
