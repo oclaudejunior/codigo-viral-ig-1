@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Viral IG - 55 Prompts para Instagram</title>
+    <meta name="description" content="55 prompts testados para criar conteúdo viral no Instagram com IA. Economize horas de trabalho.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --orange-primary: #FF6B35;
+            --orange-secondary: #F7931E;
+            --orange-glow: rgba(255, 107, 53, 0.4);
+            --bg-dark: #0a0a0a;
+            --bg-elevated: #141414;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: #ffffff;
+            overflow-x: hidden;
+            cursor: none;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        /* ============================================
+           CUSTOM CURSOR
+        ============================================ */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--orange-primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.3s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-hover {
+            transform: scale(2);
+            background: var(--orange-glow);
+        }
+        
+        /* ============================================
+           READING PROGRESS BAR
+        ============================================ */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange-primary), var(--orange-secondary));
+            z-index: 10000;
+            transform-origin: left;
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+        
+        /* ============================================
+           ANIMATED GRADIENT BACKGROUND
+        ============================================ */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #0a0a0a, #1a0a0a, #0a1a1a, #0a0a1a);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* ============================================
+           FLOATING PARTICLES
+        ============================================ */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--orange-primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translateY(-100px) translateX(50px) scale(1.5);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-200px) translateX(-50px) scale(1);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translateY(-100px) translateX(100px) scale(1.5);
+                opacity: 0.6;
+            }
+        }
+        
+        /* ============================================
+           GLASS MORPHISM CARDS
+        ============================================ */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .glass-card:hover::before {
+            left: 100%;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: var(--orange-primary);
+            box-shadow: 0 30px 60px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* ============================================
+           3D FLIP CARDS
+        ============================================ */
+        .flip-card {
+            perspective: 1000px;
+            height: 100%;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 24px;
+            padding: 32px;
+        }
+        
+        .flip-card-front {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .flip-card-back {
+            background: linear-gradient(135deg, var(--orange-primary), var(--orange-secondary));
+            transform: rotateY(180deg);
+        }
+        
+        /* ============================================
+           ULTRA MODERN BUTTONS
+        ============================================ */
+        .btn-ultra {
+            position: relative;
+            padding: 20px 48px;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, var(--orange-primary), var(--orange-secondary));
+            border: none;
+            border-radius: 50px;
+            cursor: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px var(--orange-glow);
+        }
+        
+        .btn-ultra::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-ultra:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn-ultra:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.6);
+        }
+        
+        .btn-ultra span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ============================================
+           MAGNETIC EFFECT ON HOVER
+        ============================================ */
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* ============================================
+           COUNTER ANIMATION
+        ============================================ */
+        .counter {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--orange-primary), var(--orange-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* ============================================
+           NEON GLOW TEXT
+        ============================================ */
+        .neon-text {
+            text-shadow: 
+                0 0 10px var(--orange-primary),
+                0 0 20px var(--orange-primary),
+                0 0 30px var(--orange-primary),
+                0 0 40px var(--orange-secondary);
+            animation: neon-flicker 3s infinite alternate;
+        }
+        
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 10px var(--orange-primary),
+                    0 0 20px var(--orange-primary),
+                    0 0 30px var(--orange-primary),
+                    0 0 40px var(--orange-secondary);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        /* ============================================
+           FLOATING ELEMENTS
+        ============================================ */
+        .float {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* ============================================
+           SHIMMER EFFECT
+        ============================================ */
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.5), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* ============================================
+           ACCORDION ULTRA MODERN
+        ============================================ */
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            border-color: var(--orange-primary);
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.2);
+        }
+        
+        .accordion-header {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .accordion-header:hover {
+            color: var(--orange-primary);
+        }
+        
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+            fill: var(--orange-primary);
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 24px;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding: 0 24px 24px;
+        }
+        
+        /* ============================================
+           PRICE TAG ANIMATION
+        ============================================ */
+        .price-tag {
+            display: inline-block;
+            position: relative;
+            animation: pulse-price 2s infinite;
+        }
+        
+        @keyframes pulse-price {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* ============================================
+           SCROLL INDICATOR
+        ============================================ */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 100;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+        
+        /* ============================================
+           MOBILE OPTIMIZATIONS
+        ============================================ */
+        @media (max-width: 768px) {
+            body {
+                cursor: default;
+            }
+            
+            .cursor,
+            .cursor-follower {
+                display: none;
+            }
+            
+            .counter {
+                font-size: 2.5rem;
+            }
+            
+            .btn-ultra {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+        }
+        
+        /* ============================================
+           SMOOTH SCROLL
+        ============================================ */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* ============================================
+           CUSTOM SCROLLBAR
+        ============================================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--orange-primary);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--orange-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- READING PROGRESS BAR -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- STICKY HEADER -->
+    <header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/50 border-b border-white/10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center font-bold">
+                    CV
+                </div>
+                <span class="text-xl font-bold">CÓDIGO VIRAL IG</span>
+            </div>
+            <a href="#checkout">
+                <button class="btn-ultra">
+                    <span>QUERO AGORA</span>
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex items-center justify-center relative gradient-bg overflow-hidden pt-20">
+        <!-- Particles -->
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 3.5s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <!-- Badge -->
+                <div class="inline-block mb-6 px-6 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 backdrop-blur-sm">
+                    <span class="text-orange-500 font-semibold">✨ Lançamento Especial</span>
+                </div>
+                
+                <!-- Main Headline -->
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+                    Desbloqueie<br>
+                    <span class="neon-text">55 Prompts</span><br>
+                    que <span style="color: var(--orange-primary);">VENDEM</span>
+                </h1>
+                
+                <!-- Subheadline -->
+                <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Crie conteúdo viral no Instagram em <strong class="text-white">minutos</strong>, não horas. 
+                    Economize <strong class="text-orange-500">80% do tempo</strong> de criação.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#checkout">
+                        <button class="btn-ultra magnetic">
+                            <span>🚀 COMEÇAR AGORA - R$57</span>
+                        </button>
+                    </a>
+                    <a href="#conteudo">
+                        <button class="px-8 py-4 rounded-full border-2 border-white/20 hover:border-orange-500 transition-all backdrop-blur-sm font-semibold">
+                            Ver o que está incluído
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 4V28M16 28L8 20M16 28L24 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-500"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="counter" data-target="55">0</div>
+                    <p class="text-gray-400 mt-2">Prompts Prontos</p>
+                </div>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="counter" data-target="80">0</div>
+                    <p class="text-gray-400 mt-2">% Menos Tempo</p>
+                </div>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="counter" data-target="7">0</div>
+                    <p class="text-gray-400 mt-2">Dias de Garantia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="conteudo" class="py-32 relative">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-4xl md:text-6xl font-black text-center mb-6" data-aos="fade-up">
+                O que você <span style="color: var(--orange-primary);">recebe</span>
+            </h2>
+            <p class="text-xl text-gray-400 text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Um arsenal completo para dominar a criação de conteúdo no Instagram
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="flip-card h-80" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex flex-col items-center justify-center text-center">
+                            <div class="text-6xl mb-4 float">✨</div>
+                            <h3 class="text-2xl font-bold mb-2">55 Prompts</h3>
+                            <p class="text-gray-400">Testados e validados</p>
+                        </div>
+                        <div class="flip-card-back flex flex-col items-center justify-center text-center">
+                            <h3 class="text-2xl font-bold mb-4">Detalhes</h3>
+                            <p class="text-sm opacity-90">Prompts cuidadosamente elaborados para máximo engajamento e conversão</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="flip-card h-80" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex flex-col items-center justify-center text-center">
+                            <div class="text-6xl mb-4 float" style="animation-delay: 0.3s;">🎯</div>
+                            <h3 class="text-2xl font-bold mb-2">5 Categorias</h3>
+                            <p class="text-gray-400">Estratégias variadas</p>
+                        </div>
+                        <div class="flip-card-back flex flex-col items-center justify-center text-center">
+                            <h3 class="text-2xl font-bold mb-4">Categorias</h3>
+                            <p class="text-sm opacity-90">Ideias • Storytelling • Engajamento • Autoridade • Vendas</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="flip-card h-80" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex flex-col items-center justify-center text-center">
+                            <div class="text-6xl mb-4 float" style="animation-delay: 0.6s;">📖</div>
+                            <h3 class="text-2xl font-bold mb-2">Guia Completo</h3>
+                            <p class="text-gray-400">Passo a passo</p>
+                        </div>
+                        <div class="flip-card-back flex flex-col items-center justify-center text-center">
+                            <h3 class="text-2xl font-bold mb-4">Guia</h3>
+                            <p class="text-sm opacity-90">Aprenda exatamente como usar cada prompt para resultados máximos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="flip-card h-80" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex flex-col items-center justify-center text-center">
+                            <div class="text-6xl mb-4 float" style="animation-delay: 0.9s;">🚀</div>
+                            <h3 class="text-2xl font-bold mb-2">Framework</h3>
+                            <p class="text-gray-400">Método comprovado</p>
+                        </div>
+                        <div class="flip-card-back flex flex-col items-center justify-center text-center">
+                            <h3 class="text-2xl font-bold mb-4">Framework</h3>
+                            <p class="text-sm opacity-90">Sistema estruturado para criar conteúdo magnético</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMATION SECTION -->
+    <section class="py-32 relative">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="glass-card" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-black mb-12 text-center">
+                    De <span class="text-red-500">Bloqueado</span> para <span style="color: var(--orange-primary);">Imparável</span>
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Antes -->
+                    <div class="space-y-4" data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-6 text-red-500">❌ Sem o Código Viral</h3>
+                        <div class="flex items-start gap-3 text-gray-400">
+                            <span class="text-red-500">✗</span>
+                            <p>Horas tentando pensar em ideias</p>
+                        </div>
+                        <div class="flex items-start gap-3 text-gray-400">
+                            <span class="text-red-500">✗</span>
+                            <p>Posts genéricos sem engajamento</p>
+                        </div>
+                        <div class="flex items-start gap-3 text-gray-400">
+                            <span class="text-red-500">✗</span>
+                            <p>Inconsistência na criação</p>
+                        </div>
+                        <div class="flex items-start gap-3 text-gray-400">
+                            <span class="text-red-500">✗</span>
+                            <p>Frustração e perda de tempo</p>
+                        </div>
+                        <div class="flex items-start gap-3 text-gray-400">
+                            <span class="text-red-500">✗</span>
+                            <p>Bloqueio criativo constante</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Depois -->
+                    <div class="space-y-4" data-aos="fade-left">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--orange-primary);">✓ Com o Código Viral</h3>
+                        <div class="flex items-start gap-3">
+                            <span style="color: var(--orange-primary);">✓</span>
+                            <p>Ideias em segundos, não horas</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span style="color: var(--orange-primary);">✓</span>
+                            <p>Conteúdo estratégico e direcionado</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span style="color: var(--orange-primary);">✓</span>
+                            <p>Postagens diárias sem esforço</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span style="color: var(--orange-primary);">✓</span>
+                            <p>Confiança total no que criar</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span style="color: var(--orange-primary);">✓</span>
+                            <p>Fluxo criativo constante</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFIT SECTION -->
+    <section class="py-32 relative">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16" data-aos="fade-up">
+                Por que você <span style="color: var(--orange-primary);">precisa</span> disso?
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-5xl mb-4">⏱️</div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--orange-primary);">Economize Tempo</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Pare de passar horas quebrando a cabeça. Com os prompts prontos, você cria conteúdo de qualidade em minutos.
+                    </p>
+                </div>
+                
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--orange-primary);">Conteúdo Estratégico</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Cada prompt foi desenvolvido com objetivos claros: gerar engajamento, autoridade ou vendas.
+                    </p>
+                </div>
+                
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl mb-4">🔄</div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--orange-primary);">Consistência Garantida</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Nunca mais fique sem ideias. Tenha sempre conteúdo novo e relevante para postar todos os dias.
+                    </p>
+                </div>
+                
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--orange-primary);">ROI Imediato</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Invista R$57 uma vez e tenha acesso vitalício a prompts que geram conteúdo que converte.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- EXAMPLES SECTION -->
+<section class="py-32 relative">
+    <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-black mb-4 text-center">
+            VEJA O QUE VEM <span style="color: var(--orange-primary);">DENTRO</span>
+        </h2>
+        <p class="text-center text-xl mb-12 text-gray-400">
+            Aqui está uma pequena amostra do que você vai receber
+        </p>
+        
+        <!-- Grid de Imagens -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Imagem 1 -->
+            <div class="glass-card overflow-hidden p-0" data-aos="fade-up" data-aos-delay="0">
+                <img src="SUA-IMAGEM-1.png" alt="Exemplo Prompt 1" class="w-full h-auto hover:scale-105 transition-transform duration-500">
+            </div>
+            
+            <!-- Imagem 2 -->
+            <div class="glass-card overflow-hidden p-0" data-aos="fade-up" data-aos-delay="100">
+                <img src="SUA-IMAGEM-2.png" alt="Exemplo Prompt 2" class="w-full h-auto hover:scale-105 transition-transform duration-500">
+            </div>
+            
+            <!-- Imagem 3 -->
+            <div class="glass-card overflow-hidden p-0" data-aos="fade-up" data-aos-delay="200">
+                <img src="SUA-IMAGEM-3.png" alt="Exemplo Prompt 3" class="w-full h-auto hover:scale-105 transition-transform duration-500">
+            </div>
+            
+            <!-- Imagem 4 -->
+            <div class="glass-card overflow-hidden p-0" data-aos="fade-up" data-aos-delay="300">
+                <img src="SUA-IMAGEM-4.png" alt="Exemplo Prompt 4" class="w-full h-auto hover:scale-105 transition-transform duration-500">
+            </div>
+            
+            <!-- Imagem 5 -->
+            <div class="glass-card overflow-hidden p-0" data-aos="fade-up" data-aos-delay="400">
+                <img src="SUA-IMAGEM-5.png" alt="Exemplo Prompt 5" class="w-full h-auto hover:scale-105 transition-transform duration-500">
+            </div>
+            
+            <!-- Imagem 6 -->
+            <div class="glass-card overflow-hidden p-0" data-aos="fade-up" data-aos-delay="500">
+                <img src="SUA-IMAGEM-6.png" alt="Exemplo Prompt 6" class="w-full h-auto hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="text-center">
+            <p class="text-2xl md:text-3xl font-bold mb-6" style="color: var(--orange-primary);">
+                Isso é apenas uma pequena amostra!
+            </p>
+            <p class="text-xl text-gray-400 mb-8">
+                Dentro você encontra <strong class="text-white">55 prompts completos</strong>, organizados por categorias e prontos para usar
+            </p>
+            <a href="#checkout">
+                <button class="btn-ultra">
+                    <span>🚀 QUERO ACESSO COMPLETO AGORA</span>
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- PRICING SECTION -->
+    <section id="checkout" class="py-32 relative">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="glass-card border-2 border-orange-500" data-aos="zoom-in">
+                <div class="text-center mb-12">
+                    <div class="inline-block px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 mb-6">
+                        <span class="text-orange-500 font-semibold">🔥 OFERTA DE LANÇAMENTO</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black mb-4">
+                        Investimento <span style="color: var(--orange-primary);">Único</span>
+                    </h2>
+                    <p class="text-gray-400">Acesso vitalício + atualizações gratuitas</p>
+                </div>
+                
+                <!-- Features List -->
+                <div class="space-y-4 mb-12">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" style="color: var(--orange-primary);" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>55 Prompts Testados e Validados</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" style="color: var(--orange-primary);" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>5 Categorias Estratégicas</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" style="color: var(--orange-primary);" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Guia Completo de Aplicação</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" style="color: var(--orange-primary);" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Mini-Framework de Criação</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" style="color: var(--orange-primary);" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Bônus: 10 Estruturas "Prompt que Vende"</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" style="color: var(--orange-primary);" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Atualizações Gratuitas Vitalícias</span>
+                    </div>
+                </div>
+                
+                <!-- Price -->
+                <div class="text-center mb-8">
+                    <p class="text-xl text-gray-400 mb-2">De <s>R$197</s> por apenas</p>
+                    <div class="price-tag">
+                        <span class="text-7xl font-black neon-text">R$57</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">ou 12x de R$5,70</p>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="text-center">
+                    <a href="SUA-URL-CHECKOUT">
+                        <button class="btn-ultra w-full md:w-auto shimmer">
+                            <span>🚀 SIM! EU QUERO O CÓDIGO VIRAL IG</span>
+                        </button>
+                    </a>
+                    <p class="text-sm text-gray-400 mt-4">🔒 Pagamento 100% Seguro | ⚡ Acesso Imediato</p>
+                </div>
+                
+                <!-- Guarantee -->
+                <div class="mt-12 pt-8 border-t border-white/10 text-center">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-2" style="color: #22c55e;">Garantia Incondicional de 7 Dias</h3>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Se você não sentir que o Código Viral IG valeu cada centavo, é só pedir reembolso. 
+                        Sem burocracia, sem perguntas. Devolvo 100% do valor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-32 relative">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16" data-aos="fade-up">
+                Perguntas <span style="color: var(--orange-primary);">Frequentes</span>
+            </h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="accordion-header">
+                        <span>Preciso saber usar IA?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-400 leading-relaxed">Não! Os prompts são simples de copiar e colar. Funciona em qualquer IA (ChatGPT, Claude, Gemini, etc).</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="accordion-header">
+                        <span>Serve para qualquer nicho?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-400 leading-relaxed">Sim! Os prompts são adaptáveis para qualquer nicho: coaches, infoprodutores, social medias, empresas locais, e-commerce, etc.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="accordion-header">
+                        <span>Quando recebo o acesso?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-400 leading-relaxed">Imediatamente após a aprovação do pagamento. Você recebe tudo por email em até 5 minutos.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="accordion-header">
+                        <span>E se eu não gostar?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-400 leading-relaxed">7 dias de garantia total. Devolvo 100% do valor sem burocracia, sem perguntas. Risco zero para você.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="accordion-header">
+                        <span>É pagamento único ou assinatura?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-400 leading-relaxed">Pagamento único! R$57 uma vez e acesso vitalício. Sem mensalidades, sem taxas escondidas.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="accordion-header">
+                        <span>Vou receber atualizações?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-400 leading-relaxed">Sim! Toda vez que eu adicionar novos prompts ou melhorar os existentes, você receberá gratuitamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-600/10"></div>
+        <div class="container mx-auto px-4 max-w-4xl text-center relative z-10">
+            <h2 class="text-5xl md:text-6xl font-black mb-8 leading-tight" data-aos="zoom-in">
+                Toda vez que você <span class="text-red-500">NÃO</span> posta,<br>
+                você <span style="color: var(--orange-primary);">PERDE</span> visibilidade
+            </h2>
+            <p class="text-2xl text-gray-300 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                E visibilidade = dinheiro.
+            </p>
+            <p class="text-xl text-gray-400 mb-12" data-aos="zoom-in" data-aos-delay="200">
+                55 prompts • R$57 • Uma decisão
+            </p>
+            <a href="#checkout" data-aos="zoom-in" data-aos-delay="300">
+                <button class="btn-ultra shimmer">
+                    <span>🔥 GARANTIR MEU ACESSO AGORA</span>
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 mb-4">© 2025 Código Viral IG. Todos os direitos reservados.</p>
+            <div class="flex justify-center gap-6 text-sm text-gray-500">
+                <a href="#" class="hover:text-orange-500 transition">Política de Privacidade</a>
+                <a href="#" class="hover:text-orange-500 transition">Termos de Uso</a>
+                <a href="#" class="hover:text-orange-500 transition">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let followerX = 0;
+        let followerY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.5;
+            cursorY += (mouseY - cursorY) * 0.5;
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+            
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+            cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        
+        // Cursor hover effect
+        const hoverElements = document.querySelectorAll('a, button, .magnetic');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+            });
+        });
+        
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+        
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    const increment = target / speed;
+                    
+                    const updateCounter = () => {
+                        const count = +counter.innerText;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCounter, 10);
+                        } else {
+                            counter.innerText = target + (target === 80 ? '%' : '');
+                        }
+                    };
+                    
+                    updateCounter();
+                    observer.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+        
+        counters.forEach(counter => observer.observe(counter));
+        
+        // FAQ Accordion
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Magnetic Effect
+        const magneticElements = document.querySelectorAll('.magnetic');
+        magneticElements.forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                el.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translate(0, 0)';
+            });
+        });
+        
+        // Hide scroll indicator after first scroll
+        let hasScrolled = false;
+        window.addEventListener('scroll', () => {
+            if (!hasScrolled && window.scrollY > 100) {
+                const indicator = document.querySelector('.scroll-indicator');
+                if (indicator) {
+                    indicator.style.display = 'none';
+                }
+                hasScrolled = true;
+            }
+        });
+    </script>
+</body>
+</html>
+```
